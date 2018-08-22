@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:colorError">@color/colorSubTitleText</item>
+        <item name="colorError">@color/colorSubTitleText</item>
+        <item name="textColorError">@color/colorSubTitleText</item>
+    </style>
+</resources>

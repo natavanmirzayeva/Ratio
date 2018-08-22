@@ -1,0 +1,208 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/collectionIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="matrix"
+            android:contentDescription="@string/collection_icon"
+            app:srcCompat="@drawable/baseline_book_white_36" />
+
+        <TextView
+            android:id="@+id/collectionNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="EXAMPLE WIDGET"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="#F5F5F5"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Collection Name" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/collectionImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/collection_img"
+        app:srcCompat="@drawable/test_movie_1" />
+
+    <RelativeLayout
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+
+        <TextView
+            android:id="@+id/vote_average_text"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circle_border"
+            android:gravity="center"
+            android:textColor="@color/colorTitleTextLight"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:id="@+id/post_like_comment_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/vote_average_text"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/genres_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="genres"
+                android:textColor="@color/colorTitleText"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/author_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="author"
+                android:textColor="@color/colorTitleText"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/language_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="languga"
+                    android:textColor="@color/colorTitleText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:text="/"
+                    android:textColor="@color/colorTitleText" />
+
+                <TextView
+                    android:id="@+id/releaseDate_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="release"
+                    android:textColor="@color/colorTitleText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vote_count_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/colorTitleTextLight"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/post_comments_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/votes"
+                    android:textColor="@color/colorTitleTextLight"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/your_vote_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="-"
+                        android:textColor="@color/colorTitleTextLight"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/your_vote"
+                        android:textColor="@color/colorTitleTextLight"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/your_vote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:textColor="@color/colorTitleTextLight"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/show_in_app_button"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|start"
+            android:text="@string/show_in_app"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+</LinearLayout>

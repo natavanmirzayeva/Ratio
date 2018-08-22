@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Ratio</string>
+    <!-- Login -->
+    <string name="user_name">Username</string>
+    <string name="user_passwd">Password</string>
+    <string name="forgot_passwd">Forgot My Password</string>
+    <string name="sign_in">Login</string>
+    <string name="ratio_user">Are you still not a Ratio user?</string>
+
+    <!-- Registratiton -->
+    <string name="user_name_registratiton">Enter your name</string>
+    <string name="email">Enter your email</string>
+    <string name="user_passwd_register">Enter your password</string>
+    <string name="password_confrim">Confirm Password</string>
+    <string name="sign_up">Register</string>
+    <string name="sign_in_register">Already a Ratio member? Sign in</string>
+    <string name="gender">Select your gender</string>
+    <string name="age">Enter your age</string>
+
+    <!-- NavigationDrawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_others">Others</string>
+
+    <string name="categories">Categories</string>
+    <string name="my_ratio_collection">My Ratio Collection</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="my_profile">My Profile</string>
+    <string name="search">Search</string>
+    <string name="log_out">Log Out</string>
+
+    <!-- Categories Tabs-->
+    <string name="movies">Movies</string>
+    <string name="serials">Tv Series</string>
+    <string name="books">Books</string>
+
+    <color name="colorTitleText">#424242</color>
+    <color name="colorTitleTextLight">#616161</color>
+    <color name="colorSubTitleText">#9E9E9E</color>
+    <color name="colorSubTitleTextLight">#F5F5F5</color>
+    <color name="defaultButtonTextColor">@color/colorTitleText</color>
+
+    <color name="colorLineHorizontal">#E0E0E0</color>
+
+
+    <!--Detail Screens -->
+    <!--Movie-->
+    <string name="title">Title: </string>
+    <string name="releaseDate">Release Date: </string>
+    <string name="language">Language: </string>
+    <string name="rating">Rating: </string>
+    <string name="totalRate">Total Rate: </string>
+    <string name="descriptionLbl">Plot Synopsis: </string>
+    <string name="votes">Votes</string>
+    <string name="your_vote">Your Vote:</string>
+    <string name="vote_delete">Delete Vote</string>
+    <string name="vote_it">Vote It</string>
+    <string name="vote">Vote</string>
+    <string name="adversiment">Ads</string>
+    <!-- Book -->
+    <string name="authorLbl">Authors: </string>
+
+    <!-- TV Series  -->
+    <string name="genresLbl">Genres: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Edittext Errors-->
+    <string name="error_name">Name is required</string>
+    <string name="error_email">Email is required</string>
+    <string name="error_email_valid">Enter valid email</string>
+    <string name="error_password">Password is required</string>
+    <string name="error_password_confirm">Password Confirm is required</string>
+    <string name="error_password_valid">Password must contain min 6 characters.</string>
+    <string name="error_password_match">Password are not the same</string>
+    <string name="error_age">Age is required</string>
+    <string name="snackbar_register_success">Registration Successful.</string>
+    <string name="snackbar_auth_failed">Authentication Fail.</string>
+    <string name="snackbar_login_success">Login Successful.</string>
+    <string name="snackbar_error_occurred">An error occurred. Try again later.</string>
+
+    <string name="snackbar_rating_fail">Vote Failed. Try again later.</string>
+    <string name="snackbar_rating_success">Vote Successful.</string>
+    <string name="snackbar_rating_update_success">Vote Updated Successfuly.</string>
+    <string name="snackbar_rating_delete_success">Vote Deleted Successfuly.</string>
+    <string name="snackbar_rating_update_fail">Vote couldn\'t be updated.</string>
+    <string name="snackbar_rating_delete_fail">Vote couldn\'t be deleted.</string>
+    <string name="snackbar_rating_no_internet">No internet. Try again later.</string>
+    <string name="snackbar_rating_min_vote">The vote must be greater than 0</string>
+
+    <string name="snackbar_search_min_text">Search Text must contain min 2 characters.</string>
+
+
+    <string name="banned_id">ca-app-pub-3284261743888939/6965839542</string>
+    <string name="interstitial_id">ca-app-pub-3284261743888939/3697512524</string>
+
+    <!-- com.project.udacity.ratio.sync -->
+    <string name="sync_account_type">com.project.udacity.ratio.sync</string>
+
+    <!-- Widget -->
+    <string name="show_in_app">Show in app</string>
+
+    <!--  Profile screen -->
+    <string name="usernameTitle">Username</string>
+    <string name="emailTitle">Email</string>
+    <string name="genderTitle">Gender</string>
+    <string name="ageTitle">Age</string>
+    
+    <string name="close_app_dialog">"Are you sure you want to close this activity?"</string>
+
+    <!-- Content Description -->
+    <string name="default_img">Default Image</string>
+    <string name="back_btn">Back button</string>
+    <string name="search_btn">Search Button</string>
+    <string name="collection_icon">Collection Icon</string>
+    <string name="collection_img">Collection Image</string>
+    <string name="nav_header_img">Navigation Header Image</string>
+    <string name="gender_img">Gender Image</string>
+    <string name="profile_icon">Profile Icon</string>
+    <string name="username_icon">Username Icon</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="age_icon">Age Icon</string>
+    <string name="category_item_container">Category Item Container</string>
+</resources>

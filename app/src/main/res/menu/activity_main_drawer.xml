@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/top">
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/sharp_view_list_black_24"
+            android:title="@string/categories" />
+        <item
+            android:id="@+id/nav_my_ratio_collections"
+            android:icon="@drawable/sharp_collections_black_24"
+            android:title="@string/my_ratio_collection" />
+        <item
+            android:id="@+id/nav_top_rated"
+            android:icon="@drawable/sharp_star_rate_black_18"
+            android:title="@string/top_rated" />
+
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/bottom">
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/baseline_account_box_24"
+            android:title="@string/my_profile" />
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/baseline_power_settings_new_black_24"
+            android:title="@string/log_out" />
+
+    </group>
+
+
+</menu>
