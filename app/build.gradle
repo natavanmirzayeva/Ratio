@@ -17,12 +17,11 @@ android {
 
     }
     signingConfigs {
-
         config {
             keyAlias 'key0'
-            keyPassword 'muhendis1995'
-                storeFile file("$rootDir/ratioKey.jks")
-            storePassword 'muhendis1995'
+            keyPassword 'ratio76'
+            storeFile file("$rootDir/ratioKey.jks")
+            storePassword 'ratio76'
         }
     }
     buildTypes {
