@@ -234,7 +234,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="2dp"
                                 android:layout_marginRight="2dp"
-                                android:text="-"
+                                android:text="@string/hyphen"
                                 android:textColor="@color/colorTitleTextLight"
                                 android:textStyle="bold" />
 

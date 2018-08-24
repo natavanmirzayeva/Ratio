@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Ratio</string>
+    <string name="slash">/</string>
+    <string name="hyphen">-</string>
     <!-- Login -->
     <string name="user_name">Username</string>
     <string name="user_passwd">Password</string>

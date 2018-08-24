@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -103,7 +102,7 @@ public class SearchActivity extends AppCompatActivity {
         adapter = new TabPagerAdapter(getSupportFragmentManager());
 
         Bundle bundleMovie = new Bundle();
-        bundleMovie.putBoolean("isSearch",true);
+        bundleMovie.putBoolean("isSearch", true);
         bundleMovie.putParcelableArrayList("movies", (ArrayList<? extends Parcelable>) movies);
 
         MovieFragment movieFragment = MovieFragment.newInstance();
@@ -111,7 +110,7 @@ public class SearchActivity extends AppCompatActivity {
 
 
         Bundle bundleBook = new Bundle();
-        bundleBook.putBoolean("isSearch",true);
+        bundleBook.putBoolean("isSearch", true);
         bundleBook.putParcelableArrayList("books", (ArrayList<? extends Parcelable>) books);
 
         BookFragment bookFragment = BookFragment.newInstance();
@@ -119,7 +118,7 @@ public class SearchActivity extends AppCompatActivity {
 
 
         Bundle bundleSerial = new Bundle();
-        bundleSerial.putBoolean("isSearch",true);
+        bundleSerial.putBoolean("isSearch", true);
         bundleSerial.putParcelableArrayList("serials", (ArrayList<? extends Parcelable>) serials);
 
         SerialFragment serialFragment = SerialFragment.newInstance();
@@ -143,7 +142,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onResume();
         viewPager.setCurrentItem(mCurrentItem);
         registerReceiver(searchReceiver, new IntentFilter(
-               "SEARCH"));
+                "SEARCH"));
     }
 
     @Override
