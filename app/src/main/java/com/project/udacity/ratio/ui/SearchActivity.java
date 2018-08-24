@@ -160,11 +160,6 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    private void showSnackBar(String message) {
-        Snackbar snackbar = Snackbar.make(root, message, Snackbar.LENGTH_LONG);
-        snackbar.show();
-    }
-
 
     public void startSearchIntentService() {
         Intent cbIntent = new Intent();

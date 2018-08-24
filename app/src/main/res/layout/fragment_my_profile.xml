@@ -45,7 +45,7 @@
                     android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:tint="@color/colorPrimaryDark"
                     android:contentDescription="@string/username_icon"
                     app:srcCompat="@drawable/baseline_account_box_white_24" />
@@ -80,7 +80,7 @@
                     android:id="@+id/imageView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:tint="@color/colorPrimaryDark"
                     android:contentDescription="@string/email_icon"
                     app:srcCompat="@drawable/baseline_email_white_24" />
@@ -115,7 +115,7 @@
                     android:id="@+id/imageView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:tint="@color/colorPrimaryDark"
                     android:contentDescription="@string/gender_img"
                     app:srcCompat="@drawable/baseline_wc_black_24" />
@@ -150,7 +150,7 @@
                     android:id="@+id/imageView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:tint="@color/colorPrimaryDark"
                     android:contentDescription="@string/age_icon"
                     app:srcCompat="@drawable/baseline_cake_white_24" />

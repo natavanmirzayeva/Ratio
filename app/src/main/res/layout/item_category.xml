@@ -13,6 +13,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/category_item_container"
         android:foreground="?selectableItemBackgroundBorderless"
         app:cardCornerRadius="2dp">

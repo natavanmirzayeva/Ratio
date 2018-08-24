@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -47,11 +46,13 @@ import com.willy.ratingbar.ScaleRatingBar;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
@@ -106,6 +107,10 @@ public class MovieDetailActivity extends AppCompatActivity {
     @BindView(R.id.ads_container)
     LinearLayout adsContainer;
 
+    @OnClick(R.id.vote_fab)
+    public void showDialog() {
+        showVoteDialog();
+    }
 
     Intent intent;
     final boolean[] moviesExists = new boolean[1], isUserVoted = new boolean[1];
@@ -144,13 +149,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         setMovieUi();
 
-        voteFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showVoteDialog();
-            }
-        });
-
         new InternetCheck(getApplicationContext()).isInternetConnectionAvailable(new InternetCheck.InternetCheckListener() {
 
             @Override
@@ -160,7 +158,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                     public void run() {
                         if (connected) {
                             checkMovieExistsOnFirebase();
-                            new LoadAds().execute();
+                            initializeAds();
                         } else {
                             checkMovieExistsOnLocal();
                             adsContainer.setVisibility(View.GONE);
@@ -327,11 +325,11 @@ public class MovieDetailActivity extends AppCompatActivity {
      *
      */
     private void setRatingUi(float voteAvg, int voteCount) {
-        String voteAverage = String.format("%.1f", voteAvg);
+        String voteAverage = String.format(Locale.getDefault(), "%.1f", voteAvg);
 
         voteAverageText.setText(voteAverage);
         ratingBar.setRating(voteAvg);
-        voteCountText.setText(voteCount + "");
+        voteCountText.setText(String.valueOf(voteCount));
     }
 
     /*
@@ -342,7 +340,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private void setYourRatingUi(int vote) {
         if (vote != 0) {
             yourVoteContainer.setVisibility(View.VISIBLE);
-            yourVoteText.setText(vote + "");
+            yourVoteText.setText(String.valueOf(vote));
         }
     }
 
@@ -817,20 +815,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         snackbar.show();
     }
 
-    public class LoadAds extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            initializeAds();
-        }
-    }
 
     private void scheduleStartPostponedTransition(final View sharedElement) {
         sharedElement.getViewTreeObserver().addOnPreDrawListener(

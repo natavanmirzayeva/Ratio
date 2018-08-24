@@ -45,9 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.male)
     RadioButton genderMale;
 
-    @BindView(R.id.female)
-    RadioButton genderFemale;
-
     @BindView(R.id.user_email_txt)
     TextInputEditText email;
 
@@ -121,7 +118,9 @@ public class RegisterActivity extends AppCompatActivity {
                 null);
 
         assert mCursor != null;
-        return mCursor.moveToFirst();
+        boolean result = mCursor.moveToFirst();
+        mCursor.close();
+        return result;
     }
 
     private boolean isFormValid() {
@@ -263,7 +262,5 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 }

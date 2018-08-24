@@ -36,8 +36,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="false"
                 android:layout_marginTop="4dp"
-                android:layout_toLeftOf="@id/btnSearch"
-                android:layout_toRightOf="@id/btn_back"
+                android:layout_toStartOf="@id/btnSearch"
+                android:layout_toEndOf="@id/btn_back"
                 android:ellipsize="start"
                 android:singleLine="true"
                 android:textColor="@color/colorEditText" />

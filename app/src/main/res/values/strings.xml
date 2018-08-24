@@ -20,7 +20,6 @@
     <!-- NavigationDrawer -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="navigation_others">Others</string>
 
     <string name="categories">Categories</string>
     <string name="my_ratio_collection">My Ratio Collection</string>
@@ -105,7 +104,9 @@
     <string name="emailTitle">Email</string>
     <string name="genderTitle">Gender</string>
     <string name="ageTitle">Age</string>
-    
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
     <string name="close_app_dialog">"Are you sure you want to close this activity?"</string>
 
     <!-- Content Description -->
@@ -121,4 +122,6 @@
     <string name="email_icon">Email Icon</string>
     <string name="age_icon">Age Icon</string>
     <string name="category_item_container">Category Item Container</string>
+    <string name="fab_btn">Fab Button</string>
+    <string name="widget_cont_des">Widget</string>
 </resources>

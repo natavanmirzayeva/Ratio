@@ -234,7 +234,9 @@ public class LoginActivity extends AppCompatActivity {
                 null);
 
         assert mCursor != null;
-        return mCursor.moveToFirst();
+        boolean result = mCursor.moveToFirst();
+        mCursor.close();
+        return result;
     }
 
     private void openMainActivity() {

@@ -1,6 +1,7 @@
 package com.project.udacity.ratio.ui.categories.tabs;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -65,7 +66,8 @@ public class MovieFragment extends Fragment implements
     @BindView(R.id.movies_recycler_view)
     RecyclerView recyclerView;
 
-    private MovieAdapter moviesAdapter;
+    @SuppressLint("StaticFieldLeak")
+    private static MovieAdapter moviesAdapter;
 
     private static final String RECYCLERVIEW_STATE = "recyclerview-state-1";
     private static final String RECYCLERVIEW_STATE_ADAPTER = "recyclerview-state-adapter";
@@ -173,7 +175,7 @@ public class MovieFragment extends Fragment implements
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("dbError", databaseError.getMessage().toString());
+                Log.d("dbError", databaseError.getMessage());
             }
         });
 

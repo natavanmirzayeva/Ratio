@@ -1,6 +1,7 @@
 package com.project.udacity.ratio.ui.categories.tabs;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -69,7 +70,8 @@ public class SerialFragment extends Fragment implements
 
     GridLayoutManager gridLayoutManager;
 
-    SerialAdapter serialAdapter;
+    @SuppressLint("StaticFieldLeak")
+    private static SerialAdapter serialAdapter;
 
     Parcelable savedRecyclerLayoutState;
     private static final String RECYCLERVIEW_STATE = "recyclerview-state-1";
@@ -168,7 +170,7 @@ public class SerialFragment extends Fragment implements
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("dbError", databaseError.getMessage().toString());
+                Log.d("dbError", databaseError.getMessage());
             }
         });
 

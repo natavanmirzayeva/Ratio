@@ -323,5 +323,6 @@
         app:fabSize="normal"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|right|end"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        android:contentDescription="@string/fab_btn"/>
 </android.support.design.widget.CoordinatorLayout>

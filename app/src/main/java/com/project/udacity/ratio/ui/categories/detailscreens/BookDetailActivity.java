@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,10 +26,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,11 +44,13 @@ import com.willy.ratingbar.ScaleRatingBar;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BookDetailActivity extends AppCompatActivity {
 
@@ -109,6 +108,11 @@ public class BookDetailActivity extends AppCompatActivity {
     @BindView(R.id.rating)
     RelativeLayout rating;
 
+    @OnClick(R.id.vote_fab)
+    public void showDialog() {
+        showVoteDialog();
+    }
+
     Intent intent;
     private String bookId;
     private String userId;
@@ -149,13 +153,6 @@ public class BookDetailActivity extends AppCompatActivity {
 
         setBookUi();
 
-        voteFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showVoteDialog();
-            }
-        });
-
         new InternetCheck(getApplicationContext()).isInternetConnectionAvailable(new InternetCheck.InternetCheckListener() {
 
             @Override
@@ -165,7 +162,7 @@ public class BookDetailActivity extends AppCompatActivity {
                     public void run() {
                         if (connected) {
                             checkBookExistsOnFirebase();
-                            new LoadAds().execute();
+                            initializeAds();
                         } else {
                             checkBookExistsOnLocal();
                             adsContainer.setVisibility(View.GONE);
@@ -348,11 +345,11 @@ public class BookDetailActivity extends AppCompatActivity {
      *
      */
     private void setRatingUi(float voteAvg, int voteCount) {
-        String voteAverage = String.format("%.1f", voteAvg);
+        String voteAverage = String.format(Locale.getDefault(), "%.1f", voteAvg);
 
         voteAverageText.setText(voteAverage);
         ratingBar.setRating(voteAvg);
-        voteCountText.setText(voteCount + "");
+        voteCountText.setText(String.valueOf(voteCount));
     }
 
     /*
@@ -363,7 +360,7 @@ public class BookDetailActivity extends AppCompatActivity {
     private void setYourRatingUi(int vote) {
         if (vote != 0) {
             yourVoteContainer.setVisibility(View.VISIBLE);
-            yourVoteText.setText(vote + "");
+            yourVoteText.setText(String.valueOf(vote));
         }
     }
 
@@ -760,8 +757,9 @@ public class BookDetailActivity extends AppCompatActivity {
                 null);
 
         assert cursor != null;
-        return cursor.moveToFirst();
-
+        boolean result = cursor.moveToFirst();
+        cursor.close();
+        return result;
 
     }
 
@@ -830,21 +828,6 @@ public class BookDetailActivity extends AppCompatActivity {
         snackbar.show();
     }
 
-
-    public class LoadAds extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            initializeAds();
-        }
-    }
 
     private void scheduleStartPostponedTransition(final View sharedElement) {
         sharedElement.getViewTreeObserver().addOnPreDrawListener(

@@ -1,6 +1,7 @@
 package com.project.udacity.ratio.ui.categories.tabs;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -66,7 +67,8 @@ public class BookFragment extends Fragment implements
     @BindView(R.id.bookRecycler)
     RecyclerView recyclerView;
 
-    BookAdapter booksAdapter;
+    @SuppressLint("StaticFieldLeak")
+    private static BookAdapter booksAdapter;
 
     private static final String RECYCLERVIEW_STATE = "recyclerview-state-1";
     private static final String RECYCLERVIEW_STATE_ADAPTER = "recyclerview-state-adapter";
@@ -169,7 +171,7 @@ public class BookFragment extends Fragment implements
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("dbError", databaseError.getMessage().toString());
+                Log.d("dbError", databaseError.getMessage());
             }
         });
 

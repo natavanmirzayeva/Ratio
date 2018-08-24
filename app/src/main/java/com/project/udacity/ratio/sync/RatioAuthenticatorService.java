@@ -1,6 +1,5 @@
 package com.project.udacity.ratio.sync;
 
-import android.accounts.Account;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -10,8 +9,7 @@ import android.support.annotation.Nullable;
  * Created by mehseti on 8.8.2018.
  */
 
-public class RatioAuthenticatorService extends Service
-{
+public class RatioAuthenticatorService extends Service {
     private RatioAuthenticator ratioAuthenticator;
 
     @Override

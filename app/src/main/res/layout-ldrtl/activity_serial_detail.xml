@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right|end"
+                    android:gravity="end"
                     android:text="@string/app_name"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
@@ -79,7 +79,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
                     android:text="@string/title" />
 
                 <TextView
@@ -87,7 +86,7 @@
                     style="@style/textStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="title" />
+                     />
             </LinearLayout>
 
             <LinearLayout
@@ -102,7 +101,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
                     android:text="@string/releaseDate" />
 
                 <TextView
@@ -110,7 +108,7 @@
                     style="@style/textStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="release" />
+                   />
             </LinearLayout>
 
             <LinearLayout
@@ -125,7 +123,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
                     android:text="@string/genresLbl" />
 
                 <TextView
@@ -133,7 +130,7 @@
                     style="@style/textStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="author" />
+                    />
 
             </LinearLayout>
 
@@ -149,7 +146,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
                     android:text="@string/language" />
 
                 <TextView
@@ -157,7 +153,7 @@
                     style="@style/textStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="languga" />
+                    />
             </LinearLayout>
 
 
@@ -338,5 +334,6 @@
         app:fabSize="normal"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|right|end"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        android:contentDescription="@string/fab_btn"/>
 </android.support.design.widget.CoordinatorLayout>

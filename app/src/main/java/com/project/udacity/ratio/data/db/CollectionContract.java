@@ -11,7 +11,6 @@ public class CollectionContract {
     CollectionContract() {
     }
 
-    ;
     public static final String AUTHORITY = "com.project.udacity.ratio";
 
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);

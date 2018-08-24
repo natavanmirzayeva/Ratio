@@ -22,8 +22,6 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -74,7 +72,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "Gms";
     @BindView(R.id.nav_view)
     NavigationView navigationView;
 
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity
     private static final String ACCOUNT = "ratio";
 
     public static final int SYNC_INTERVAL = 120; //2 minutes
-    public static final int WIDGET_INTERVAL = 1 * 60000; // 1 minutes
+    public static final int WIDGET_INTERVAL = 60000; // 1 minutes
 
 
     private InterstitialAd mInterstitialAd;
@@ -157,7 +154,6 @@ public class MainActivity extends AppCompatActivity
                 .build());
 
 
-
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,7 +179,7 @@ public class MainActivity extends AppCompatActivity
             getRatedCollection(collectionId);
         }
 
-        new LoadAds().execute();
+        initializeAds();
     }
 
     private void getRatedCollection(String collectionId) {
@@ -343,7 +339,7 @@ public class MainActivity extends AppCompatActivity
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setMessage(getString(R.string.close_app_dialog))
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         MainActivity.super.onBackPressed();
@@ -351,11 +347,10 @@ public class MainActivity extends AppCompatActivity
                     }
 
                 })
-                .setNegativeButton("No", null)
+                .setNegativeButton(android.R.string.no, null)
                 .show();
     }
 
-    ;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -369,7 +364,6 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
      /*   if (id == R.id.action_settings) {
@@ -497,20 +491,6 @@ public class MainActivity extends AppCompatActivity
             return accounts[0];
         }
         return null;
-    }
-
-    public class LoadAds extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            initializeAds();
-        }
     }
 
     private void showSnackBar(String message) {

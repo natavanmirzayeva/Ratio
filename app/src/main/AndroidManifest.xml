@@ -84,7 +84,7 @@
                 android:resource="@xml/app_widget_info" />
         </receiver>
 
-        <service android:name=".util.SearchIntentService"></service>
+        <service android:name=".util.SearchIntentService"/>
 
     </application>
 

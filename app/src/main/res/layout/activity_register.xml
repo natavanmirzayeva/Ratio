@@ -156,7 +156,7 @@
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1.2dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:background="@android:color/white" />
 
             <RadioGroup
@@ -170,14 +170,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Male"
+                    android:text="@string/male"
                     android:textColor="@android:color/white" />
 
                 <RadioButton
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female"
+                    android:text="@string/female"
                     android:textColor="@android:color/white" />
             </RadioGroup>
 

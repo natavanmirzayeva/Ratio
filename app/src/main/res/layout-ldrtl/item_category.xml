@@ -13,6 +13,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/category_item_container"
         android:foreground="?selectableItemBackgroundBorderless"
         app:cardCornerRadius="2dp">
@@ -50,7 +51,6 @@
                 android:maxLines="2"
                 android:minLines="2"
                 android:padding="8dp"
-                android:text="Game Of Thrones"
                 android:textColor="@color/colorTitleText"
                 android:textStyle="bold" />
 

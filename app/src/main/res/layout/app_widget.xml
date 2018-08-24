@@ -17,7 +17,7 @@
             android:id="@+id/collectionIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
             android:scaleType="matrix"
@@ -28,7 +28,7 @@
             android:id="@+id/collectionNameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="EXAMPLE WIDGET"
+            android:contentDescription="@string/widget_cont_des"
             android:gravity="center"
             android:padding="8dp"
             android:textColor="#F5F5F5"
@@ -82,7 +82,6 @@
                 android:id="@+id/genres_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="genres"
                 android:textColor="@color/colorTitleText"
                 android:visibility="gone" />
 
@@ -90,7 +89,6 @@
                 android:id="@+id/author_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="author"
                 android:textColor="@color/colorTitleText"
                 android:visibility="gone" />
 
@@ -103,7 +101,6 @@
                     android:id="@+id/language_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="languga"
                     android:textColor="@color/colorTitleText" />
 
                 <TextView
@@ -118,7 +115,6 @@
                     android:id="@+id/releaseDate_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="release"
                     android:textColor="@color/colorTitleText" />
             </LinearLayout>
 
@@ -198,7 +194,7 @@
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|right"
+            android:layout_gravity="end"
             android:text="@string/show_in_app"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimary" />

@@ -671,7 +671,7 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("dbError", databaseError.getMessage().toString());
+                Log.d("dbError", databaseError.getMessage());
             }
         });
     }
@@ -822,7 +822,9 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
                 new String[]{String.valueOf(id)},
                 null);
         assert cursor != null;
-        return cursor.moveToFirst();
+        boolean result = cursor.moveToFirst();
+        cursor.close();
+        return result;
 
     }
 

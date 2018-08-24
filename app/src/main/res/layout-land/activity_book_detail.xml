@@ -108,7 +108,7 @@
                     android:id="@+id/author_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp" />
+                    android:layout_marginStart="8dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -303,5 +303,6 @@
         app:fabSize="normal"
         app:layout_anchor="@+id/linear"
         app:layout_anchorGravity="right|bottom"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        android:contentDescription="@string/fab_btn"/>
 </android.support.design.widget.CoordinatorLayout>

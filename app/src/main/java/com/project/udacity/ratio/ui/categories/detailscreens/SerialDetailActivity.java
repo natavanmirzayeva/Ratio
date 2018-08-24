@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -45,10 +44,12 @@ import com.willy.ratingbar.ScaleRatingBar;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class SerialDetailActivity extends AppCompatActivity {
 
@@ -106,6 +107,10 @@ public class SerialDetailActivity extends AppCompatActivity {
     @BindView(R.id.ads_container)
     LinearLayout adsContainer;
 
+    @OnClick(R.id.vote_fab)
+    public void showDialog() {
+        showVoteDialog();
+    }
 
     Intent intent;
     private String serialId;
@@ -146,13 +151,6 @@ public class SerialDetailActivity extends AppCompatActivity {
 
         setSerialUi();
 
-        voteFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showVoteDialog();
-            }
-        });
-
         new InternetCheck(getApplicationContext()).isInternetConnectionAvailable(new InternetCheck.InternetCheckListener() {
 
             @Override
@@ -162,7 +160,7 @@ public class SerialDetailActivity extends AppCompatActivity {
                     public void run() {
                         if (connected) {
                             checkSerialExistsOnFirebase();
-                            new LoadAds().execute();
+                            initializeAds();
                         } else {
                             checkSerialExistsOnLocal();
                             adsContainer.setVisibility(View.GONE);
@@ -341,11 +339,11 @@ public class SerialDetailActivity extends AppCompatActivity {
      *
      */
     private void setRatingUi(float voteAvg, int voteCount) {
-        String voteAverage = String.format("%.1f", voteAvg);
+        String voteAverage = String.format(Locale.getDefault(), "%.1f", voteAvg);
 
         voteAverageText.setText(voteAverage);
         ratingBar.setRating(voteAvg);
-        voteCountText.setText(voteCount + "");
+        voteCountText.setText(String.valueOf(voteCount));
     }
 
     /*
@@ -356,7 +354,7 @@ public class SerialDetailActivity extends AppCompatActivity {
     private void setYourRatingUi(int vote) {
         if (vote != 0) {
             yourVoteContainer.setVisibility(View.VISIBLE);
-            yourVoteText.setText(vote + "");
+            yourVoteText.setText(String.valueOf(vote));
         }
     }
 
@@ -831,20 +829,6 @@ public class SerialDetailActivity extends AppCompatActivity {
         snackbar.show();
     }
 
-
-    public class LoadAds extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            initializeAds();
-        }
-    }
 
     private void scheduleStartPostponedTransition(final View sharedElement) {
         sharedElement.getViewTreeObserver().addOnPreDrawListener(

@@ -20,7 +20,6 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <FrameLayout
-                android:id="@+id/frame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_collapseMode="parallax">
@@ -180,7 +179,7 @@
                         app:srb_starHeight="16dp"
                         app:srb_starPadding="1dp"
                         app:srb_starWidth="16dp"
-                        app:srb_stepSize="0.1"></com.willy.ratingbar.ScaleRatingBar>
+                        app:srb_stepSize="0.1" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -293,6 +292,7 @@
         android:layout_height="52dp"
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
+        android:contentDescription="@string/fab_btn"
         android:focusable="true"
         android:src="@drawable/star_filled"
         android:tint="@android:color/white"
