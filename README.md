@@ -1,6 +1,6 @@
-## Udacity Capstone Project
+# Udacity Capstone Project
 
-Description 
+##Description 
 
    If you want to reach for the best-loved tools the only address you need is Ratio. In our application you are the determining role. Due to you and all Ratio lovers we can analyze and share with people the most fascinating, popular, top rated and most loved movies, tv series or books. 
    You can:
